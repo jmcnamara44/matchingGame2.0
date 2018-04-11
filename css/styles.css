@@ -5,36 +5,51 @@
          local('SuperMario256.ttf'),
          url('SuperMario256.ttf') format('truetype'),
 }
-body {
-	background-color: #DBFCFF;
-}
-.headerMain {
-	text-align: center;
-	color: #CC4B09;
-	font-family: "Mario";
-	margin-top: 50px;
-	margin-bottom: 50px;
+
+h1 {
+  font-family: 'Mario';
+  margin: 5%;
+  text-align: center;
+  font-size: 65pt;
+  color: #E52929;
+  text-shadow: 5px 5px black;
 }
 
-#memory_board {
-	background:#5D94FB;
-	border:#999 3px solid;
-	width:800px;
-	height:540px;
-	padding:24px;
-	margin:0px auto;
+.startButton {
+  background-color: #13B510;
+  margin-left: 43%;
+  text-align: center;
+  font-family: 'Mario';
+  padding: 14px 20px;
+
 }
-#memory_board > div {
-	background-image: url(img/mario.jpg);
-	background-repeat: no-repeat;
-  background-size: 100%;
-	border:#999 2px ridge;
-	width:100px;
-	height:100px;
-	float:left;
-	margin:10px;
-	padding:20px;
-	font-size:64px;
-	cursor:pointer;
-	text-align:center;
+
+.form-group {
+  width: 25%;
+  text-align: center;
+  margin: 5%;
+  margin-left: 35%;
+}
+
+#inputName1 {
+  text-align: center;
+  font-family: 'Mario';
+}
+
+body {
+  background-color: #FFF542;
+}
+
+.card {
+  height: 200px;
+  width: 150px;
+  float: left;
+  margin: 15px;
+  border: 5px;
+  background-color: #0B78C6;
+
+}
+
+.card:hover {
+  cursor: pointer;
 }
