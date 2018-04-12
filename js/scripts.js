@@ -32,7 +32,8 @@ function flipCard(cardValue){
     var checkResult = match(chosenCards[0], chosenCards[1]);
     if(checkResult === true) {
       chosenCards.forEach(function(thisCardValue) {
-        matched.push(thisCardValue)});
+        matched.push(thisCardValue)
+      });
     } //else {
       // return checkResult;
     // }
