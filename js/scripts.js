@@ -16,15 +16,16 @@ function rand(){
     var i = initialArray.length
     var j;
     var temp;
-    while(--i > 0){
-        j = Math.floor(Math.random() * (i+1));
+    while(--i >= 0){
+        j = Math.floor(Math.random() * (initialArray.length));
         temp = initialArray[j];
         initialArray[j] = initialArray[i];
         initialArray[i] = temp;
         randomArray.push(temp);
-        console.log(randomArray);
-    }
 
+        // console.log(randomArray);
+    }
+    console.log(randomArray.length)
     return randomArray
 
 }
@@ -46,6 +47,7 @@ var matched = [];
 function flipCard(cardValue){
   chosenCards.push(cardValue);
   if (chosenCards.length > 1) {
+
     var checkResult = match(chosenCards[0], chosenCards[1]);
     if(checkResult === true) {
       chosenCards.forEach(function(thisCardValue) {
@@ -103,12 +105,15 @@ for(var i = 0; i<initialArray.length; i++) {
     // var showValue = ($(this).show());
 
     if (flipCard(cardValue) == true) {
-      console.log(chosenCards)
-      if (matched == true) {
+      // console.log(chosenCards)
+      console.log(matched.length);
+      // console.log("randarr "+randomArray.length, "initArr "+ initialArray.length);
+      if (matched.length === 12) {
         alert(nameInput + ", you've won! Restart game to play again.")
       }
     } else {
       $(".hide").fadeOut(2000);
+      // alert("Try again, idiot!")
     }
   });
 })
