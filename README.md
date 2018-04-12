@@ -24,7 +24,8 @@ A program for a card game where the player attempts to match pairs of cards from
 
 ## Known Bugs
 
-_Page is currently under development._
+_Matches are not disabled forever_
+_Do not have a message when the user completes the board_
 
 
 ## Technologies Used

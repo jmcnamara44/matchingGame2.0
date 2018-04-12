@@ -126,7 +126,6 @@ for(var i = 0; i<initialArray.length; i++) {
       }
     } else {
       $(".hide").fadeOut(2000);
-      // alert("Try again, idiot!")
     }
   });
 })
