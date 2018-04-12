@@ -1,17 +1,34 @@
 
 var initialArray = ["A","A","B","B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H", "I", "I", "J", "J", "K", "K", "L", "L"];
 var randomArray = [];
-var rand = function() {
-  return Math.random();
-};
-for(var j=0;j<initialArray.length;j++) {
-  if (rand() > .5) {
-  randomArray.push(initialArray[j]);
+// var rand = function() {
+//   return Math.random();
+// };
+// for(var j=0;j<initialArray.length;j++) {
+//   if (rand() > .5) {
+//   randomArray.push(initialArray[j]);
+//
+//   } else {
+//   randomArray.unshift(initialArray[j]);
+//   }
+// };
+function rand(){
+    var i = initialArray.length
+    var j;
+    var temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = initialArray[j];
+        initialArray[j] = initialArray[i];
+        initialArray[i] = temp;
+        randomArray.push(temp);
+        console.log(randomArray);
+    }
 
-  } else {
-  randomArray.unshift(initialArray[j]);
-  }
-};
+    return randomArray
+
+}
+
 
 function match(num1, num2){
   if (num1 === num2){
@@ -42,22 +59,34 @@ function flipCard(cardValue){
   }
   return true;
 }
+function refresh() {
+  location.reload();
+};
 
 
 //UI
 $(document).ready(function() {
-
+$(".resetGame").hide();
   $("form#nameInput").submit(function(event) {
     event.preventDefault();
     $(".card").show();
     $("#nameInput").hide();
+    $(".resetGame").show();
+    var nameInput = $("#inputName1").val();
+
+    $("button.refreshButton").click(function(event) {
+      event.preventDefault();
+      refresh();
+    });
   });
+
   // $("#refreshButton").click(function() {
   //   $("#nameInput").show();
   //   $(".card").show();
   //
   // })
 //writes letters to cards
+rand();
 for(var i = 0; i<initialArray.length; i++) {
   $("span#indexval" + (i+1)).text(randomArray[i]);
 
@@ -75,6 +104,9 @@ for(var i = 0; i<initialArray.length; i++) {
 
     if (flipCard(cardValue) == true) {
       console.log(chosenCards)
+      if (matched == true) {
+        alert(nameInput + ", you've won! Restart game to play again.")
+      }
     } else {
       $(".hide").fadeOut(2000);
     }

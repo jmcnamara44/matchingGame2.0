@@ -70,3 +70,12 @@ function memoryFlipTile(tile,val){
 $(document).ready(function() {
   newBoard();
 });
+
+
+function refresh() {
+  location.reload();
+};
+$("button.refreshButton").click(function(event) {
+  event.preventDefault();
+  refresh();
+});
