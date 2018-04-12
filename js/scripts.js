@@ -17,15 +17,13 @@ function rand(){
     var j;
     var temp;
     while(--i >= 0){
-        j = Math.floor(Math.random() * (initialArray.length));
+        j = Math.floor(Math.random() * (i+1));
         temp = initialArray[j];
         initialArray[j] = initialArray[i];
         initialArray[i] = temp;
         randomArray.push(temp);
 
-        // console.log(randomArray);
     }
-    console.log(randomArray.length)
     return randomArray
 
 }
@@ -39,8 +37,11 @@ function match(num1, num2){
     }
 };
 
+var clickArray = [];
 var chosenCards =[];
 var matched = [];
+var matchedId = [];
+
 
 //ACCEPTS strings from card values
 //will return TRUE for cards being kept visible (1 or a match) or FALSE for a mismatch found, return cards to face-down
@@ -50,12 +51,25 @@ function flipCard(cardValue){
 
     var checkResult = match(chosenCards[0], chosenCards[1]);
     if(checkResult === true) {
+      var string = clickArray.toString().split("");
+      var firstId = string[4];
+      var secondId = string[10];
       chosenCards.forEach(function(thisCardValue) {
-        matched.push(thisCardValue)
-      });
-    } //else {
-      // return checkResult;
-    // }
+      matched.push(thisCardValue);
+
+    });
+      matchedId.push(firstId);
+      matchedId.push(secondId);
+
+      for(var x = 0; x<matchedId.length;x++) {
+        $("#indexval" + matchedId[x]).css("background-color", "#FFF542");
+        // $("#" + clickArray[0]).css("background-color", "black");
+        // $("#" + clickArray[1]).css("background-color", "black");
+      };
+      console.log(matchedId);
+    }
+    string = [];
+    clickArray = [];
     chosenCards = [];
     return checkResult;
   }
@@ -90,7 +104,7 @@ $(".resetGame").hide();
 //writes letters to cards
 rand();
 for(var i = 0; i<initialArray.length; i++) {
-  $("span#indexval" + (i+1)).text(randomArray[i]);
+  $("span#indexval" + (i+1)).text(randomArray[i]);  //////
 
 };
 
@@ -98,15 +112,14 @@ for(var i = 0; i<initialArray.length; i++) {
     $(this).find("span").css("display", "block");
     // var cellValue = $(this).attr("p");
     var cardValue = ($(this).find("p").text());
-
-
+    var idValue = ($(this).attr("id"));
+    clickArray.push(idValue);
 
     // $(this).find("span").removeClass(".showCard");
     // var showValue = ($(this).show());
 
     if (flipCard(cardValue) == true) {
       // console.log(chosenCards)
-      console.log(matched.length);
       // console.log("randarr "+randomArray.length, "initArr "+ initialArray.length);
       if (matched.length === 12) {
         alert(nameInput + ", you've won! Restart game to play again.")
