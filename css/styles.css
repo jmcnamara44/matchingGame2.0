@@ -32,7 +32,9 @@ h1 {
   font-family: 'Mario';
   padding: 14px 20px;
 }
-
+.hide {
+  display: none;
+}
 .form-group {
   width: 25%;
   text-align: center;

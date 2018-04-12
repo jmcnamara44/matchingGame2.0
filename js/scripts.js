@@ -17,7 +17,7 @@ function rand(){
     var j;
     var temp;
     while(--i >= 0){
-        j = Math.floor(Math.random() * (initialArray.length));
+        j = Math.floor(Math.random() * (i+1));
         temp = initialArray[j];
         initialArray[j] = initialArray[i];
         initialArray[i] = temp;
@@ -25,7 +25,7 @@ function rand(){
 
         // console.log(randomArray);
     }
-    console.log(randomArray.length)
+    console.log(randomArray)
     return randomArray
 
 }
@@ -103,9 +103,14 @@ for(var i = 0; i<initialArray.length; i++) {
 
     // $(this).find("span").removeClass(".showCard");
     // var showValue = ($(this).show());
-
+    // var whatCard = true;
     if (flipCard(cardValue) == true) {
       // console.log(chosenCards)
+      if (match(chosenCards) == true) {
+        $(this).find(".card").css("display", "none");
+
+      }
+      // var cellValue = $(this).attr("p");
       console.log(matched.length);
       // console.log("randarr "+randomArray.length, "initArr "+ initialArray.length);
       if (matched.length === 12) {
