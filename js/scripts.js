@@ -15,9 +15,9 @@ for(var j=0;j<initialArray.length;j++) {
 
 function match(num1, num2){
   if (num1 === num2){
-    return true
+    return true;
   } else {
-    return false
+    return false;
     }
 };
 
@@ -31,8 +31,11 @@ function flipCard(cardValue){
   if (chosenCards.length > 1) {
     var checkResult = match(chosenCards[0], chosenCards[1]);
     if(checkResult === true) {
-      chosenCards.forEach(function(thisCardValue){matched.push(thisCardValue)});
-    }
+      chosenCards.forEach(function(thisCardValue) {
+        matched.push(thisCardValue)});
+    } //else {
+      // return checkResult;
+    // }
     chosenCards = [];
     return checkResult;
   }
@@ -72,7 +75,7 @@ for(var i = 0; i<initialArray.length; i++) {
     if (flipCard(cardValue) == true) {
       console.log(chosenCards)
     } else {
-      $(this).find("span").css("display", "none");
+      $(".hide").fadeOut(2000);
     }
   });
 })
