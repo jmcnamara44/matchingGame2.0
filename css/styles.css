@@ -10,7 +10,7 @@ h1 {
   font-family: 'Mario';
   margin: 5%;
   text-align: center;
-  font-size: 65pt;
+  font-size: 100pt;
   color: #E52929;
   text-shadow: 5px 5px black;
 }
@@ -56,6 +56,8 @@ body {
   cursor: pointer;
 }
 span {
-  color: white;
-  font-size: 20pt;
+  color: #FCFFF4;
+  font-size: 110pt;
+  font-family: "Mario";
+  text-align: center;
 }
