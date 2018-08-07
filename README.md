@@ -1,32 +1,30 @@
 # _Memory Matching Game App_
 
-#### _A web application for a memory-driven card game. {4/9/18}_
+#### A web application for a memory-driven card game. {4/9/18}
 
-#### By _**Andrew Lupton, Austin Roberts, Dennise Ortega, Jim McNamara, and Kristi Hwang**_
+#### By **_Andrew Lupton, Austin Roberts, Dennise Ortega, Jim McNamara, and Kristi Hwang_**
 
 ## Description
-A program for a card game where the player attempts to match pairs of cards from the game board. Matched pairs are removed from the board, and the player wins when all cards are removed.
+_A program for a card game where the player attempts to match pairs of cards from the game board. Matched pairs are removed from the board, and the player wins when all cards are removed._
 
 ## Specs
-- The application is operable by one player at a time.
-- The page loads initially with a visually appealing header, a name input box, and a start button. Clicking the "start" button hides the name input, reveals the game board, and logs the player name.
-- The player clicks two cards each turn.
-- If the player has chosen correctly, and the two cards are a pair, those cards are removed from the game board.
-- If, on the other hand the player chooses wrongly, the chosen cards are flipped back down on the board and the player loses a "life".
-- The player "wins" when all cards are removed from the game board, and "loses" when they run out of lives. Either result is returned to the player in the form of an alert, to which is appended the player name.
-- A "reset" button is placed next to the game board, which the player can click at any time. Clicking this button refreshes the game back to the "start screen".
-
+* _The application is operable by one player at a time._
+* _The page loads initially with a visually appealing header, a name input box, and a start button. Clicking the "start" button hides the name input, reveals the game board, and logs the player name._
+* _The player clicks two cards each turn._
+* _If the player has chosen correctly, and the two cards are a pair, those cards are removed from the game board._
+* _If, on the other hand the player chooses wrongly, the chosen cards are flipped back down on the board and the player loses a "life"._
+* _The player "wins" when all cards are removed from the game board, and "loses" when they run out of lives. Either result is returned to the player in the form of an alert, to which is appended the player name._
+* _A "reset" button is placed next to the game board, which the player can click at any time. Clicking this button refreshes the game back to the "start screen"._
 
 ## Setup/Installation Requirements
 
-* Clone from Github repository.
-* Open in Chrome browser.
+* _Clone from Github repository._
+* _Open in Chrome browser._
 
 ## Known Bugs
 
-_Matches are not disabled forever_
-_Do not have a message when the user completes the board_
-
+* _Doesn't have a turn counter._
+* _Matches are not disabled forever._
 
 ## Technologies Used
 

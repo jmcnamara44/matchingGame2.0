@@ -23,6 +23,11 @@ h1 {
 .hide {
   display: none;
 }
+.match {
+  display: block;
+  color: white;
+  text-align: center;
+}
 .startButton {
   background-color: #13B510;
   margin-left: 43%;
