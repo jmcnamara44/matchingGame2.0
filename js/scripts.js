@@ -27,6 +27,7 @@ var clickArray = [];
 var chosenCards =[];
 var matched = [];
 var matchedId = [];
+var turnCounter = 1;
 
 //ACCEPTS strings from card values
 //will return TRUE for cards being kept visible (1 or a match) or FALSE for a mismatch found, return cards to face-down
@@ -53,6 +54,7 @@ function flipCard(cardValue){
     string = [];
     clickArray = [];
     chosenCards = [];
+    turnCounter +=1;
     return checkResult;
   }
   return true;
@@ -85,19 +87,18 @@ for(var i = 0; i<initialArray.length; i++) {
   $("span#indexval" + (i+1)).text(randomArray[i]);
 };
 
-var turnCounter = 0;
   $(".card").click(function() {
-    if(clickArray[0] == ($(this).attr("id"))){
+    if(clickArray[0] == ($(this).attr("id")) || matchedId.indexOf($(this).attr("id")) != -1){
     } else {
-      turnCounter+=1;
       $("#turn-counter").text(turnCounter);
       $(this).find("span").css("display", "block");
       var cardValue = ($(this).find("p").text());
       var idValue = ($(this).attr("id"));
+      console.log(idValue);
       clickArray.push(idValue);
       if (flipCard(cardValue) == true) {
         if (matched.length === 24) {
-          alert(nameInput + ", you've won! Restart game to play again.")
+          alert(nameInput + ", you've won in " + turnCounter + " moves! Restart game to play again.")
         }
       } else {
         $(".hide").fadeOut(2000);
