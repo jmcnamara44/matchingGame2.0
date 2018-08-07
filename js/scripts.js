@@ -43,8 +43,6 @@ function flipCard(cardValue){
         matched.push(chosenCards[0]);
         matched.push(chosenCards[1]);
       }
-      console.log(matched);
-      console.log(matchedId);
       for(var x = 0; x<matchedId.length;x++) {
         $("#indexval" + matchedId[x]).css("background-color", "#FFF542");
         $("#" + clickArray[x]).css("background-color", "black");
@@ -87,11 +85,12 @@ for(var i = 0; i<initialArray.length; i++) {
   $("span#indexval" + (i+1)).text(randomArray[i]);
 };
 
-
-
+var turnCounter = 0;
   $(".card").click(function() {
     if(clickArray[0] == ($(this).attr("id"))){
     } else {
+      turnCounter+=1;
+      $("#turn-counter").text(turnCounter);
       $(this).find("span").css("display", "block");
       var cardValue = ($(this).find("p").text());
       var idValue = ($(this).attr("id"));
